@@ -31,3 +31,24 @@
 .visible {
   display: block;
 }
+
+.next,
+.prev {
+  position: absolute;
+  top: 50%;
+  font-size: 30px;
+  text-align: center;
+  background-color: white;
+  line-height: 40px;
+  width: 40px;
+  opacity: 0.4;
+  border-radius: 90px;
+}
+
+.prev {
+  left: 10px;
+}
+
+.next {
+  right: 10px;
+}
