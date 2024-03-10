@@ -40,25 +40,31 @@ const next = document.querySelector(".next");
 const listItems = document.getElementsByClassName("item");
 
 let imgIndex = 0;
+//prendo un signolo elemento dalla lista e aggiungo la classe visible
 let listItem = listItems[imgIndex];
 listItem.classList.add("visible");
 
 next.addEventListener("click", function () {
-  listItems[imgIndex].classList.remove("visible");
-  imgIndex++;
+  listItems[imgIndex].classList.remove("visible"); //rimuovo all'immagine corrente il visible
+  imgIndex++; //incremento indice
   if (imgIndex < listItems.length) {
+    //se indice minore della lunghezza di listItems allora metto la classe visible
     listItems[imgIndex].classList.add("visible");
   } else {
+    //altrimenti l'indice è maggiore/uguale alla lunghezza di listItems quindi riporto alla prima immagine
     imgIndex = 0;
     listItems[imgIndex].classList.add("visible");
   }
 });
+
 prev.addEventListener("click", function () {
   listItems[imgIndex].classList.remove("visible");
   imgIndex--;
   if (imgIndex > -1) {
+    //se indice maggiore della lunghezza di listItems allora metto la classe visible
     listItems[imgIndex].classList.add("visible");
   } else {
+    //altrimenti l'indice è minore/uguale alla lunghezza di listItems quindi riporto all'ultima' immagine
     imgIndex = 4;
     listItems[imgIndex].classList.add("visible");
   }
