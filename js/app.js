@@ -43,29 +43,34 @@ let imgIndex = 0;
 let listItem = listItems[imgIndex];
 listItem.classList.add("visible");
 
+next.addEventListener("click", function () {
+  listItems[imgIndex].classList.remove("visible");
+  imgIndex++;
+  if (imgIndex < listItems.length) {
+    listItems[imgIndex].classList.add("visible");
+  } else {
+    imgIndex = 0;
+    listItems[imgIndex].classList.add("visible");
+  }
+});
+prev.addEventListener("click", function () {
+  listItems[imgIndex].classList.remove("visible");
+  imgIndex--;
+  if (imgIndex > -1) {
+    listItems[imgIndex].classList.add("visible");
+  } else {
+    imgIndex = 4;
+    listItems[imgIndex].classList.add("visible");
+  }
+});
+
 // next.addEventListener("click", function () {
 //   listItems[imgIndex].classList.remove("visible");
 //   imgIndex++;
-//   if (imgIndex <= listItems.length) {
-//     listItems[imgIndex].classList.add("visible");
-//   } else {
-//     imgIndex--;
-//     listItems[imgIndex].classList.add("visible");
-//   }
+//   listItems[imgIndex].classList.add("visible");
 // });
 // prev.addEventListener("click", function () {
 //   listItems[imgIndex].classList.remove("visible");
 //   imgIndex--;
 //   listItems[imgIndex].classList.add("visible");
 // });
-
-next.addEventListener("click", function () {
-  listItems[imgIndex].classList.remove("visible");
-  imgIndex++;
-  listItems[imgIndex].classList.add("visible");
-});
-prev.addEventListener("click", function () {
-  listItems[imgIndex].classList.remove("visible");
-  imgIndex--;
-  listItems[imgIndex].classList.add("visible");
-});
